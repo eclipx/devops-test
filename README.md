@@ -1,3 +1,7 @@
+<p align="center">
+    <img  alg="Eclipx" src="http://eclipxgroup.com/wp-content/themes/reverie-master/img/template/eclipx-group-logo.png" />
+</p>
+
 # Goal
 
 Attached is a simple Node.js web app with 2 files
