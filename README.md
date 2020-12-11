@@ -23,6 +23,6 @@ Create a Dockerfile and the relevant file(s) so we could build the docker image.
 
 # Bonus Points
 
-- extra steps to productionise the image eg image tagging/ versioning
+- Extra steps to productionise the image eg image tagging/ versioning
 - Adapting stronger Security Practices
 - Multistage build
