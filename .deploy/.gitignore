@@ -1,0 +1,6 @@
+.env
+.env.assume
+.env.auth
+.env copy
+terraform/.terraform*
+terraform.tfstate*

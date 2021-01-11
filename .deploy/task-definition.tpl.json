@@ -1,0 +1,30 @@
+{
+    "family": "${FAMILY}",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/ecs-task-${APP_NAME}-${AWS_DEFAULT_REGION}",
+    "cpu": "512",
+    "memory": "1024",
+    "containerDefinitions": [
+        {
+            "name": "${APP_NAME}",
+            "image": "${IMAGE_NAME}",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8080
+                }
+            ],
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "/ecs/${CLUSTER_NAME}/${APP_NAME}",
+                "awslogs-region": "${AWS_DEFAULT_REGION}",
+                "awslogs-stream-prefix": "${APP_NAME}"
+              }
+            }
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ]
+}

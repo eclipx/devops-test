@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  aws:
+    image: dnxsolutions/aws:1.18.79-dnx1
+    entrypoint: "/bin/bash -c"
+    volumes:
+      - ~/.aws:/root/.aws
+
+  terraform:
+    image: dnxsolutions/terraform:0.12.24-dnx1
+    volumes:
+      - ./terraform:/work
+      - ~/.aws:/root/.aws
+
+  deploy:
+    image: learnawstechclub/docker-ecs-deploy:v1.0.0
+    volumes:
+      - ~/.aws:/root/.aws
+      - ./task-definition.tpl.json:/work/task-definition.tpl.json
+      

@@ -1,12 +1,23 @@
 {
-    "name": "docker_web_app",
-    "version": "1.0.0",
-    "description": "Node.js on Docker",
-    "main": "server.js",
-    "scripts": {
-      "start": "node server.js"
-    },
-    "dependencies": {
-      "express": "^4.16.1"
-    }
-  }
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eclipx/devops-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eclipx/devops-test/issues"
+  },
+  "homepage": "https://github.com/eclipx/devops-test#readme"
+}
