@@ -1,5 +1,5 @@
 resource aws_ecs_service "default" {
-  depends_on = [ aws_lb_listener.ecs_http_redirect ]
+  depends_on = [ aws_lb_listener.ecs_http_redirect, aws_ecs_cluster.ecs ]
   name                               = var.name
   cluster                            = var.cluster_name
   task_definition                    = var.image != "" ? aws_ecs_task_definition.default[0].arn : var.task_definition_arn

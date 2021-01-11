@@ -79,8 +79,14 @@ terraform-plan:
 		terraform plan -out=.terraform-plan-$(WORKSPACE)
 .PHONY: terraform-plan
 
+terraform-plan-destroy:
+	@echo "+++ :terraform: Terraform Plan Destroy"
+	docker-compose -f $(PATH_DEPLOY)/docker-compose.yml run --rm \
+		terraform plan -out=.terraform-plan-destroy-$(WORKSPACE) -destroy
+.PHONY: terraform-plan
+
 terraform-destroy:
 	@echo "+++ :terraform: Terraform destroy"
 	docker-compose -f $(PATH_DEPLOY)/docker-compose.yml run --rm \
-		terraform destroy
+		terraform destroy -auto-approve
 .PHONY: terraform-destroy

@@ -37,9 +37,12 @@ Create a Dockerfile and the relevant file(s) so we could build the docker image 
 
 1. Update AWS_ACCOUNT_ID variable in Makefile with the your account ID
 2. Run the below steps
-    - make terraform-init
-    - make terraform-plan
-    - make terraform-apply
-    - make dockerBuild
-    - make dockerPush
-    - make deploy-ecs
+    - make terraform-init --> initialize a working directory containing Terraform configuration files
+    - make terraform-plan --> create an execution plan
+    - make terraform-apply --> implement the execution plan
+    - make dockerBuild --> Build & tag the docker image using commit hash --short
+    - make dockerPush --> push docker to ecr
+    - make deploy-ecs --> deploy the pushed docker to ecs-service
+3. Follw Steps to destroy the resources created by Terraform
+    - make terraform-plan-destroy --> create an destruction plan
+    - make terraform-destroy --> destroy resources in state.
